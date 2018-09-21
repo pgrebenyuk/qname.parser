@@ -29,8 +29,8 @@ public class QNameParserInvalidTest {
     @Parameterized.Parameters(name = "{index}: \"{0}\"")
     public static List<Object[]> getParameters() {
         return Arrays.asList(new Object[][] {
-                {""}, {"."}, {".."}, {"prefix:"}, {"prefix:name "}, {"prefix: name"}, {"pre fix:name"},
-                {"name/name"}, {"name[name"}, {"prefix:name:name"}
+                {""}, {":name"}, {"."}, {".."}, {"prefix:"}, {" name"}, {" prefix:name"}, {"prefix: name"},
+                {"prefix:name "}, {"pre fix:name"}, {"name/name"}, {"name[name"}, {"prefix:name:name"}
         });
     }
 
