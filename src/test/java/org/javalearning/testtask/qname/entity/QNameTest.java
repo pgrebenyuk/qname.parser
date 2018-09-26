@@ -13,6 +13,7 @@ public class QNameTest {
         QName qName = new QName("local");
         Assert.assertEquals("local", qName.getAsString());
     }
+
     @Test
     public void testSetPrefix() {
         QName qName = new QName("local");
