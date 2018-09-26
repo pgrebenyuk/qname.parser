@@ -32,50 +32,62 @@ public class QNameParserTest {
     public void testInvalidNames01() throws IllegalNameException {
         parser.parse("");
     }
+
     @Test(expected = IllegalNameException.class)
     public void testInvalidNames02() throws IllegalNameException {
         parser.parse(":name");
     }
+
     @Test(expected = IllegalNameException.class)
     public void testInvalidNames03() throws IllegalNameException {
         parser.parse(".");
     }
+
     @Test(expected = IllegalNameException.class)
     public void testInvalidNames04() throws IllegalNameException {
         parser.parse("..");
     }
+
     @Test(expected = IllegalNameException.class)
     public void testInvalidNames05() throws IllegalNameException {
         parser.parse("prefix:");
     }
+
     @Test(expected = IllegalNameException.class)
     public void testInvalidNames06() throws IllegalNameException {
         parser.parse(" name");
     }
+
     @Test(expected = IllegalNameException.class)
     public void testInvalidNames07() throws IllegalNameException {
         parser.parse(" prefix:name");
     }
+
     @Test(expected = IllegalNameException.class)
     public void testInvalidNames08() throws IllegalNameException {
         parser.parse("prefix: name");
     }
+
     @Test(expected = IllegalNameException.class)
     public void testInvalidNames09() throws IllegalNameException {
         parser.parse("prefix:name ");
     }
+
     @Test(expected = IllegalNameException.class)
     public void testInvalidNames10() throws IllegalNameException {
         parser.parse("pre fix:name");
     }
+
     @Test(expected = IllegalNameException.class)
     public void testInvalidNames11() throws IllegalNameException {
         parser.parse("name/name");
     }
+
     @Test(expected = IllegalNameException.class)
     public void testInvalidNames12() throws IllegalNameException {
         parser.parse("name[name");
     }
+
     @Test(expected = IllegalNameException.class)
     public void testInvalidNames13() throws IllegalNameException {
         parser.parse("prefix:name:name");
