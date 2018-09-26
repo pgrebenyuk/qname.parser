@@ -14,7 +14,7 @@ public class QNameTest {
         Assert.assertEquals("local", qName.getAsString());
     }
     @Test
-    public void testsetPrefix() {
+    public void testSetPrefix() {
         QName qName = new QName("local");
         qName.setPrefix("prefix");
         Assert.assertEquals("prefix:local", qName.getAsString());
