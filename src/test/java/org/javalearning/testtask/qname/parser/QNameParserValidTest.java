@@ -13,7 +13,7 @@ public class QNameParserValidTest {
     private QNameParser parser = new RealQNameParser();
 
     @Test
-    public void testValidName() throws IllegalNameException {
+    public void testValidName1() throws IllegalNameException {
         QName qName = parser.parse("prefix:name");
         Assert.assertEquals("prefix:name", qName.getAsString());
     }
@@ -22,6 +22,11 @@ public class QNameParserValidTest {
     public void testValidName2() throws IllegalNameException {
         QName qName = parser.parse("prefix:na me");
         Assert.assertEquals("prefix:na me", qName.getAsString());
+    }
+    @Test
+    public void testValidName3() throws IllegalNameException {
+        QName qName = parser.parse("name");
+        Assert.assertEquals("name", qName.getAsString());
     }
 
 }
