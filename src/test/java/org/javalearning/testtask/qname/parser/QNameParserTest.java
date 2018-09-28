@@ -28,6 +28,24 @@ public class QNameParserTest {
         Assert.assertEquals("name", qName.getAsString());
     }
 
+    @Test
+    public void testValidName04() throws IllegalNameException {
+        QName qName = parser.parse("≥name");
+        Assert.assertEquals("≥name", qName.getAsString());
+    }
+
+    @Test
+    public void testValidName05() throws IllegalNameException {
+        QName qName = parser.parse("na»me");
+        Assert.assertEquals("na»me", qName.getAsString());
+    }
+
+    @Test
+    public void testValidName06() throws IllegalNameException {
+        QName qName = parser.parse("name®");
+        Assert.assertEquals("name®", qName.getAsString());
+    }
+
     @Test(expected = IllegalNameException.class)
     public void testInvalidNames01() throws IllegalNameException {
         parser.parse("");
@@ -92,4 +110,20 @@ public class QNameParserTest {
     public void testInvalidNames13() throws IllegalNameException {
         parser.parse("prefix:name:name");
     }
+
+    @Test(expected = IllegalNameException.class)
+    public void testInvalidNames14() throws IllegalNameException {
+        parser.parse("?prefix:name");
+    }
+
+    @Test(expected = IllegalNameException.class)
+    public void testInvalidNames15() throws IllegalNameException {
+        parser.parse("pre«fix:name");
+    }
+
+    @Test(expected = IllegalNameException.class)
+    public void testInvalidNames16() throws IllegalNameException {
+        parser.parse("prefix>:name");
+    }
+
 }
