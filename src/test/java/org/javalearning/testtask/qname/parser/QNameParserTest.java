@@ -46,6 +46,12 @@ public class QNameParserTest {
         Assert.assertEquals("name®", qName.getAsString());
     }
 
+    @Test
+    public void testValidName07() throws IllegalNameException {
+        QName qName = parser.parse("prefixSML:name");
+        Assert.assertEquals("prefixSML:name", qName.getAsString());
+    }
+
     @Test(expected = IllegalNameException.class)
     public void testInvalidNames01() throws IllegalNameException {
         parser.parse("");
