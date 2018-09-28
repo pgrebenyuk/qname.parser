@@ -48,8 +48,8 @@ public class QNameParserTest {
 
     @Test
     public void testValidName07() throws IllegalNameException {
-        QName qName = parser.parse("prefixSML:name");
-        Assert.assertEquals("prefixSML:name", qName.getAsString());
+        QName qName = parser.parse("prefixXML:name");
+        Assert.assertEquals("prefixXML:name", qName.getAsString());
     }
 
     @Test(expected = IllegalNameException.class)
@@ -139,7 +139,7 @@ public class QNameParserTest {
 
     @Test(expected = IllegalNameException.class)
     public void testInvalidNamesXML() throws IllegalNameException {
-        parser.parse("XMl:name");
+        parser.parse("Xml:name");
     }
 
  }
