@@ -126,4 +126,9 @@ public class QNameParserTest {
         parser.parse("prefix>:name");
     }
 
-}
+    @Test(expected = IllegalNameException.class)
+    public void testInvalidNames17() throws IllegalNameException {
+        parser.parse("1prefix:name");
+    }
+
+ }
